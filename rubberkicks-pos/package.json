@@ -8,12 +8,14 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "dependencies": {
+  "dependencies": 
     "next": "^14.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "lucide-react": "^0.383.0",
-    "@vercel/kv": "^1.0.1"
+    "@vercel/kv": "^1.0.1",
+    "prisma": "^5.0.0",
+    "@prisma/client": "^5.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",
