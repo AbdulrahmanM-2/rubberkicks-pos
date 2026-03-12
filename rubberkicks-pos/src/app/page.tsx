@@ -401,7 +401,7 @@ export default function Home() {
                         </div>
                         <div className="text-right">
                           <p className="text-xl font-bold text-indigo-600 mono">
-                            /={product.price}
+                            {product.price}/=
                           </p>
                         </div>
                       </div>
