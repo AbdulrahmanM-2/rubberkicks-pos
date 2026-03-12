@@ -678,7 +678,11 @@ interface ProductFormProps {
 
 function ProductForm({ product, onSave, onClose }: ProductFormProps) {
   const [formData, setFormData] = useState(
-    product || {
+    product ? {
+      ...product,
+      price: product.price.toString(),
+      stock: product.stock.toString(),
+    } : {
       name: '',
       category: 'Boots',
       price: '',
@@ -690,7 +694,11 @@ function ProductForm({ product, onSave, onClose }: ProductFormProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSave(formData);
+    onSave({
+      ...formData,
+      price: parseFloat(formData.price),
+      stock: parseInt(formData.stock),
+    });
   };
 
   return (
