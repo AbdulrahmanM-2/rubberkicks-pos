@@ -677,29 +677,29 @@ interface ProductFormProps {
 }
 
 function ProductForm({ product, onSave, onClose }: ProductFormProps) {
-  const [formData, setFormData] = useState(
-    product ? {
-      ...product,
-      price: product.price.toString(),
-      stock: product.stock.toString(),
-    } : {
-      name: '',
-      category: 'Boots',
-      price: '',
-      stock: '',
-      size: '',
-      color: '',
-    }
-  );
+const [formData, setFormData] = useState(
+     product ? {
+       ...product,
+       price: product.price.toString(),
+       stock: product.stock.toString(),
+     } : {
+       name: '',
+       category: 'Boots',
+       price: '',
+       stock: '',
+       size: '',
+       color: '',
+     }
+   );
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    onSave({
-      ...formData,
-      price: parseFloat(formData.price),
-      stock: parseInt(formData.stock),
-    });
-  };
+     e.preventDefault();
+     onSave({
+       ...formData,
+       price: parseFloat(formData.price),
+       stock: parseInt(formData.stock),
+     });
+   };
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
